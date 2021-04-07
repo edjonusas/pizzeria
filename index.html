@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizzeria</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <section>
+      <form>
+        <h2>Add a new pizza to the menu</h2>
+        <div class="input-block">
+          <label for="pizza-name">Enter pizza name:</label>
+          <input id="pizza-name" type="text" />
+          <span id="error-name" class="error-message"></span>
+        </div>
+        <div class="input-block">
+          <label for="pizza-price">Enter pizza price:</label>
+          <input id="pizza-price" type="text" />
+          <span id="error-price" class="error-message"></span>
+        </div>
+        <div class="input-block">
+          <label for="pizza-heat">Set pizza heat:</label>
+          <input id="pizza-heat" type="text" />
+          <span id="error-heat" class="error-message"></span>
+        </div>
+        <div class="input-block">
+          <label for="pizza-topping">Add pizza toppings:</label>
+          <div class="topping-row">
+            <input id="pizza-topping" type="text" />
+            <button type="button" value="add-topping" id="add-topping">
+              Add topping
+            </button>
+          </div>
+          <span id="error-topping" class="error-message"></span>
+          <div class="toppings-container"></div>
+        </div>
+        <div class="input-block">
+          <label for="pizza-images">Chose pizza photo:</label>
+          <select name="pizza-images" id="pizza-images">
+            <option value="none">none</option>
+            <option value="pizza01">pizza 1</option>
+            <option value="pizza02">pizza 2</option>
+            <option value="pizza03">pizza 3</option>
+            <option value="pizza04">pizza 4</option>
+            <option value="pizza05">pizza 5</option>
+            <option value="pizza06">pizza 6</option>
+            <option value="pizza07">pizza 7</option>
+          </select>
+        </div>
+        <button type="submit" value="submit" class="submit-button">
+          Add pizza
+        </button>
+      </form>
+    </section>
+  </body>
+</html>
