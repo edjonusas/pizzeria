@@ -82,6 +82,10 @@ const generatePizzaList = () => {
 
         pizzaCard.append(popupBlock);
 
+        buttonCancel.addEventListener("click", () => {
+          popupBlock.remove();
+        });
+
         buttonDel.addEventListener("click", () => {
           pizzaList = pizzaList.filter((item) => item.name !== pizza.name);
           sortedPizzaLIst = [];

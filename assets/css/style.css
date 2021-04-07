@@ -115,8 +115,7 @@ button {
 }
 
 #pizza-list {
-  position: relative;
-  padding: 40px 0;
+  padding: 40px 0 200px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -131,7 +130,7 @@ button {
   text-align: center;
   background-color: #ffffff;
   position: absolute;
-  top: 35%;
+  bottom: -20%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
