@@ -34,12 +34,10 @@ const generatePizzaList = () => {
     const data = JSON.parse(sessionStorage.getItem("pizza-list"));
     pizzaList = data;
 
-    if (sortedPizzaLIst.length === 0) {
-      sortedPizzaLIst = data;
-      sortedPizzaLIst.sort((a, b) =>
-        a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
-      );
-    }
+    sortedPizzaLIst = data;
+    sortedPizzaLIst.sort((a, b) =>
+      a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
+    );
 
     sortedPizzaLIst.map((pizza) => {
       console.log(pizza);
@@ -67,10 +65,29 @@ const generatePizzaList = () => {
       deleteButton.innerText = "Delete pizza";
       // delete button event listener
       deleteButton.addEventListener("click", () => {
-        pizzaList = pizzaList.filter((item) => item.name !== pizza.name);
-        sortedPizzaLIst = [];
-        sessionStorage.setItem("pizza-list", JSON.stringify(pizzaList));
-        generatePizzaList();
+        const popupBlock = document.createElement("div");
+        popupBlock.classList.add("popup");
+        const div = document.createElement("div");
+        const popupMessage = document.createElement("p");
+        popupMessage.innerText = "Delete this Pizza ?";
+
+        const buttonDel = document.createElement("button");
+        buttonDel.innerText = "Delete";
+
+        const buttonCancel = document.createElement("button");
+        buttonCancel.innerText = "Cancel";
+
+        div.append(buttonCancel, buttonDel);
+        popupBlock.append(popupMessage, div);
+
+        pizzaCard.append(popupBlock);
+
+        buttonDel.addEventListener("click", () => {
+          pizzaList = pizzaList.filter((item) => item.name !== pizza.name);
+          sortedPizzaLIst = [];
+          sessionStorage.setItem("pizza-list", JSON.stringify(pizzaList));
+          generatePizzaList();
+        });
       });
       // create heat icons
       const pizzaHeatBlock = document.createElement("div");
@@ -111,7 +128,6 @@ form.addEventListener("submit", (event) => {
       emptyValues();
       pizzaList.push(newPizza);
       sessionStorage.setItem("pizza-list", JSON.stringify(pizzaList));
-      pizzaListContainer.innerHTML = "";
       generatePizzaList();
     }
   }

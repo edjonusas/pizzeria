@@ -115,6 +115,7 @@ button {
 }
 
 #pizza-list {
+  position: relative;
   padding: 40px 0;
   display: grid;
   grid-template-columns: 1fr;
@@ -122,7 +123,25 @@ button {
   grid-gap: 50px 20px;
 }
 
+.popup {
+  width: 200px;
+  border: 2px solid #285034;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup button {
+  margin: 10px;
+}
+
 .pizza-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
