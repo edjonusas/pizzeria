@@ -1,0 +1,169 @@
+body {
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 15px 5px 5px;
+}
+
+input,
+select {
+  box-sizing: border-box;
+  border: 2px solid #285034;
+  border-radius: 5px;
+  padding: 14px 5px;
+}
+
+.topping-row {
+  display: flex;
+  flex-direction: column;
+}
+
+#pizza-topping {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+#add-topping {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #285034;
+  border: 2px solid #285034;
+  border-radius: 5px;
+  background: none;
+  padding: 14px;
+}
+
+.submit-button {
+  margin-top: 5px;
+  color: #fff;
+  background-color: #285034;
+}
+
+.delete-button {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.toppings-container {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.topping {
+  display: flex;
+  align-items: center;
+  border: 2px solid #285034;
+  border-radius: 5px;
+  color: #285034;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 10px;
+  margin: 0 5px 5px 0;
+}
+
+.topping span {
+  margin-right: 10px;
+}
+
+.error-message {
+  margin: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ad0c0c;
+}
+
+/*pizza list */
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.list-top {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-top h2 {
+  margin: 0;
+}
+
+.heat-block img {
+  height: 24px;
+  width: 24px;
+}
+
+#pizza-list {
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 50px 20px;
+}
+
+.pizza-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pizza-card > img {
+  object-fit: cover;
+  width: 100%;
+  height: 280px;
+}
+
+.pizza-card .pizza-price {
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.pizza-card button {
+  margin-top: 20px;
+}
+
+.pizza-toppings {
+  margin-top: 20px;
+  text-align: center;
+  min-height: 40px;
+}
+
+.heat-block {
+  height: 30px;
+}
+
+@media only screen and (min-width: 650px) {
+  #pizza-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .container {
+    max-width: 1000px;
+  }
+  #pizza-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
