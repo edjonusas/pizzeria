@@ -1,26 +1,26 @@
 "use strict";
 // Selectors
 const form = document.querySelector("form");
-
+// pizza name input and error message selectors
 const inputPizzaName = document.getElementById("pizza-name");
 const errorPizzaName = document.getElementById("error-name");
-
+// pizza price input and error message selectors
 const inputPizzaPrice = document.getElementById("pizza-price");
 const errorPizzaPrice = document.getElementById("error-price");
-
+// pizza heat input and error message selectors
 const inputPizzaHeat = document.getElementById("pizza-heat");
 const errorPizzaHeat = document.getElementById("error-heat");
-
+// pizza toppings input and error message selectors
 const inputPizzaTopping = document.getElementById("pizza-topping");
 const errorPizzaTopping = document.getElementById("error-topping");
-
+// pizza toppings elements and container
 const addPizzaTopping = document.getElementById("add-topping");
 const toppingsContainer = document.querySelector(".toppings-container");
-
+// pizza image selector
 const selectPizzaImage = document.getElementById("pizza-images");
-//
+// pizza list block selector
 const pizzaListContainer = document.getElementById("pizza-list");
-
+// pizza sort selector
 const sortPizza = document.getElementById("sort-pizza");
 
 let toppingList = [];
@@ -38,9 +38,7 @@ const generatePizzaList = () => {
     sortedPizzaLIst.sort((a, b) =>
       a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
     );
-
     sortedPizzaLIst.map((pizza) => {
-      console.log(pizza);
       // create pizza card div
       const pizzaCard = document.createElement("div");
       pizzaCard.classList.add("pizza-card");
@@ -63,7 +61,7 @@ const generatePizzaList = () => {
       // create pizza delete button
       const deleteButton = document.createElement("button");
       deleteButton.innerText = "Delete pizza";
-      // delete button event listener
+      // delete button event listener generates popup
       deleteButton.addEventListener("click", () => {
         const popupBlock = document.createElement("div");
         popupBlock.classList.add("popup");
@@ -82,10 +80,12 @@ const generatePizzaList = () => {
 
         pizzaCard.append(popupBlock);
 
+        // cancel delete action
         buttonCancel.addEventListener("click", () => {
           popupBlock.remove();
         });
 
+        // delete
         buttonDel.addEventListener("click", () => {
           pizzaList = pizzaList.filter((item) => item.name !== pizza.name);
           sortedPizzaLIst = [];
@@ -93,6 +93,7 @@ const generatePizzaList = () => {
           generatePizzaList();
         });
       });
+
       // create heat icons
       const pizzaHeatBlock = document.createElement("div");
       pizzaHeatBlock.classList.add("heat-block");
